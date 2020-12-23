@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let familia ={
+    receitas :[2000.00 , 300.00 ],
+    despesas :[70.00 , 100.00 , 100.00 , 350.00 , 400.00 , 200.00]
+}
+
+function soma(array){
+    let total =0
+    for(let value of array){
+        total += value
+    }
+   return total
+}
+
+function calculoBalanco(){
+    const calculoReceitas = soma(familia.receitas)
+    const calculoDespesas = soma(familia.despesas)
+
+    const total = calculoReceitas - calculoDespesas
+
+    const OK = total >= 0;
+
+    let balanco = "negativo";
+
+    if (OK) {
+        balanco = "positivo"
+    }
+    console.log(`Seu saldo é ${balanco} : R$${total.toFixed(2)}`)
+}
+calculoBalanco()
+    </script>
+</body>
+</html>
